@@ -1,0 +1,14 @@
+{
+    "name": "squaredpoint/timer",
+    "description": "Set of classes and interfaces to work with time aware functionnalities.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "mika",
+            "email": "1506612+elmika@users.noreply.github.com"
+        }
+    ],
+    "require": {
+	"php": "7.2.*"
+    }
+}
