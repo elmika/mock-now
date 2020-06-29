@@ -6,19 +6,17 @@ abstract class TimeAware
 {
     private $clock;
 
-    protected function __construct()
+    /**
+     * TimeAware constructor.
+     * @param Clock|null $clock Defaults to system time
+     */
+    protected function __construct(?Clock $clock=null)
     {
-        $this->clock = new SystemClock();
+        $this->clock = is_null($clock) ? new SystemClock() : $clock;
     }
 
     protected function now(): \DateTimeImmutable
     {
-        return $this->clock->getNow();
-    }
-
-    protected function setClock(Clock $clock) : TimeAware
-    {
-        $this->clock = $clock;
-        return $this;
+        return $this->clock->now();
     }
 }

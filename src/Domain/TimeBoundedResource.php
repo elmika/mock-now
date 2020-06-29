@@ -8,9 +8,9 @@ class TimeBoundedResource extends TimeAware
     private $bookTime;
     private $timeout;
 
-    public function __construct()
+    public function __construct(?Clock $clock=null)
     {
-        parent::__construct();
+        parent::__construct($clock);
         $this->timeout = 60 * 5; // 5 minutes
     }
 
